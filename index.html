@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-dpr="1" style="font-size: 54px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>千万美女在这等你</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="./js/ui.css">
+</head>
+
+<body style="font-size: 12px;"><!-- 640x960 -->
+    <div class="list">
+        <ul>
+            <li>
+                <div class="scroll" id="scr1" style="transform: translateY(-136px);">
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/05.jpg" alt="">&gt;</div>
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/06.jpg" alt="">&gt;</div>
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/01.jpg" alt="">&gt;</div>
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/02.jpg" alt="">&gt;</div>
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/03.jpg" alt="">&gt;</div>
+                     <div class="pic"><img referrerpolicy="no-referrer" src="./img/04.jpg" alt="">&gt;</div>
+
+                     </div>
+            </li>
+            <li>
+                <div class="scroll" id="scr2" style="transform: translateY(-136px);">
+
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/11.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/12.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/13.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/07.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/08.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/09.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/10.jpg" alt="">&gt;</div>
+
+                </div>
+            </li>
+            <li>
+                <div class="scroll" id="scr3" style="transform: translateY(-136px);">
+
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/18.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/19.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/14.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/15.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/16.jpg" alt="">&gt;</div>
+                    <div class="pic"><img referrerpolicy="no-referrer" src="./img/17.jpg" alt="">&gt;</div>
+
+                    </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="down" id="down"><!-- 点击下载 -->
+         <a href="https://www.baidu.com/"><img src="./img/install1.png" alt=""></a>
+    </div>
+
+    <footer>© 2023
+        <a href="javascript:;">千万美女在这等你</a>
+    </footer>
+
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+
+    <script>//图片滚动规则
+      
+        $(function () {
+            var dom = document.querySelector('#scr1');
+            var dom2 = document.querySelector('#scr2');
+            var dom3 = document.querySelector('#scr3');
+            var _h = Math.round($("#picItem").height());
+
+            roll(dom);
+            roll(dom2);
+            roll(dom3);
+
+            function roll(dom) {
+                var h_i = 0;
+                var animation = function () {
+                    requestAnimationFrame(function () {
+                        h_i = h_i - 0.5;
+                        if (h_i % _h === 0) {
+                            dom.appendChild(dom.firstElementChild);
+                            h_i = 0;
+                        }
+                        dom.style.transform = 'translateY(' + h_i + 'px)';
+                        animation(dom);
+                    })
+                };
+                animation(dom);
+            }
+            
+
+            var parameter = window.location.pathname;
+            var _channelCode = '';
+            if (parameter !== "") {
+                if (window.location.search.indexOf("channelCode=") != -1) {
+                    _channelCode = getUrlParam("channelCode");
+                }
+        }
+        
+        });
+    </script>
+
+
+</body></html>
